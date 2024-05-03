@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D15964C2B86ECF000E0AA8F /* StepRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15964B2B86ECF000E0AA8F /* StepRecordingView.swift */; };
+		0D1596502B86EEA300E0AA8F /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15964F2B86EEA300E0AA8F /* ClientModel.swift */; };
+		0DD80CFE2B7D7A02007DF330 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD80CFD2B7D7A02007DF330 /* BluetoothManager.swift */; };
+		0DD80D002B7D80A7007DF330 /* BluetoothView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD80CFF2B7D80A7007DF330 /* BluetoothView.swift */; };
+		0DE3ECFF2B76CFDA000BBA43 /* parkinsonwalkerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE3ECFE2B76CFDA000BBA43 /* parkinsonwalkerApp.swift */; };
+		0DE3ED012B76CFDA000BBA43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE3ED002B76CFDA000BBA43 /* ContentView.swift */; };
+		0DE3ED032B76CFDE000BBA43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE3ED022B76CFDE000BBA43 /* Assets.xcassets */; };
+		0DE3ED062B76CFDE000BBA43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE3ED052B76CFDE000BBA43 /* Preview Assets.xcassets */; };
+		0DE6BF322B7AC60A00B77F22 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */; };
+		7F39E6492BC64C2D00062D76 /* AnalyticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E6482BC64C2D00062D76 /* AnalyticsModel.swift */; };
+		7F39E64B2BC64D9F00062D76 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */; };
+		7F39E64D2BC64F8A00062D76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E64C2BC64F8A00062D76 /* SettingsView.swift */; };
+		7F861CD52BC665D800C63305 /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F861CD42BC665D800C63305 /* ConnectionStatusView.swift */; };
+		7F861CD72BC6709B00C63305 /* RecordingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F861CD62BC6709B00C63305 /* RecordingIndicatorView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D15964B2B86ECF000E0AA8F /* StepRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepRecordingView.swift; sourceTree = "<group>"; };
+		0D15964F2B86EEA300E0AA8F /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
+		0DD80CFD2B7D7A02007DF330 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		0DD80CFF2B7D80A7007DF330 /* BluetoothView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothView.swift; sourceTree = "<group>"; };
+		0DE3ECFB2B76CFDA000BBA43 /* parkinsonwalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkinsonwalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE3ECFE2B76CFDA000BBA43 /* parkinsonwalkerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parkinsonwalkerApp.swift; sourceTree = "<group>"; };
+		0DE3ED002B76CFDA000BBA43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0DE3ED022B76CFDE000BBA43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DE3ED052B76CFDE000BBA43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		7F39E6482BC64C2D00062D76 /* AnalyticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsModel.swift; sourceTree = "<group>"; };
+		7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		7F39E64C2BC64F8A00062D76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7F861CD42BC665D800C63305 /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
+		7F861CD62BC6709B00C63305 /* RecordingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingIndicatorView.swift; sourceTree = "<group>"; };
+		7FC771422B9595AE002BDC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DE3ECF82B76CFDA000BBA43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DE3ECF22B76CFDA000BBA43 = {
+			isa = PBXGroup;
+			children = (
+				0DE3ECFD2B76CFDA000BBA43 /* parkinsonwalker */,
+				0DE3ECFC2B76CFDA000BBA43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0DE3ECFC2B76CFDA000BBA43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DE3ECFB2B76CFDA000BBA43 /* parkinsonwalker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DE3ECFD2B76CFDA000BBA43 /* parkinsonwalker */ = {
+			isa = PBXGroup;
+			children = (
+				7FC771422B9595AE002BDC5D /* Info.plist */,
+				0DE6BF302B7AC5FB00B77F22 /* model */,
+				0DE6BF2F2B7AC5F300B77F22 /* views */,
+				0DE3ECFE2B76CFDA000BBA43 /* parkinsonwalkerApp.swift */,
+				0DE3ED002B76CFDA000BBA43 /* ContentView.swift */,
+				0DE3ED022B76CFDE000BBA43 /* Assets.xcassets */,
+				0DE3ED042B76CFDE000BBA43 /* Preview Content */,
+			);
+			path = parkinsonwalker;
+			sourceTree = "<group>";
+		};
+		0DE3ED042B76CFDE000BBA43 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0DE3ED052B76CFDE000BBA43 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0DE6BF2F2B7AC5F300B77F22 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */,
+				0DD80CFF2B7D80A7007DF330 /* BluetoothView.swift */,
+				0D15964B2B86ECF000E0AA8F /* StepRecordingView.swift */,
+				7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */,
+				7F39E64C2BC64F8A00062D76 /* SettingsView.swift */,
+				7F861CD42BC665D800C63305 /* ConnectionStatusView.swift */,
+				7F861CD62BC6709B00C63305 /* RecordingIndicatorView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		0DE6BF302B7AC5FB00B77F22 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0DD80CFD2B7D7A02007DF330 /* BluetoothManager.swift */,
+				0D15964F2B86EEA300E0AA8F /* ClientModel.swift */,
+				7F39E6482BC64C2D00062D76 /* AnalyticsModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DE3ECFA2B76CFDA000BBA43 /* parkinsonwalker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DE3ED092B76CFDE000BBA43 /* Build configuration list for PBXNativeTarget "parkinsonwalker" */;
+			buildPhases = (
+				0DE3ECF72B76CFDA000BBA43 /* Sources */,
+				0DE3ECF82B76CFDA000BBA43 /* Frameworks */,
+				0DE3ECF92B76CFDA000BBA43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = parkinsonwalker;
+			productName = parkinsonwalker;
+			productReference = 0DE3ECFB2B76CFDA000BBA43 /* parkinsonwalker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DE3ECF32B76CFDA000BBA43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					0DE3ECFA2B76CFDA000BBA43 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 0DE3ECF62B76CFDA000BBA43 /* Build configuration list for PBXProject "parkinsonwalker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DE3ECF22B76CFDA000BBA43;
+			productRefGroup = 0DE3ECFC2B76CFDA000BBA43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DE3ECFA2B76CFDA000BBA43 /* parkinsonwalker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DE3ECF92B76CFDA000BBA43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DE3ED062B76CFDE000BBA43 /* Preview Assets.xcassets in Resources */,
+				0DE3ED032B76CFDE000BBA43 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DE3ECF72B76CFDA000BBA43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F39E64B2BC64D9F00062D76 /* AnalyticsView.swift in Sources */,
+				7F861CD52BC665D800C63305 /* ConnectionStatusView.swift in Sources */,
+				7F39E6492BC64C2D00062D76 /* AnalyticsModel.swift in Sources */,
+				0DE6BF322B7AC60A00B77F22 /* CalibrationView.swift in Sources */,
+				0D1596502B86EEA300E0AA8F /* ClientModel.swift in Sources */,
+				0DD80D002B7D80A7007DF330 /* BluetoothView.swift in Sources */,
+				7F39E64D2BC64F8A00062D76 /* SettingsView.swift in Sources */,
+				0DE3ED012B76CFDA000BBA43 /* ContentView.swift in Sources */,
+				7F861CD72BC6709B00C63305 /* RecordingIndicatorView.swift in Sources */,
+				0DD80CFE2B7D7A02007DF330 /* BluetoothManager.swift in Sources */,
+				0D15964C2B86ECF000E0AA8F /* StepRecordingView.swift in Sources */,
+				0DE3ECFF2B76CFDA000BBA43 /* parkinsonwalkerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0DE3ED072B76CFDE000BBA43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0DE3ED082B76CFDE000BBA43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DE3ED0A2B76CFDE000BBA43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"parkinsonwalker/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YRS8USNK7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = parkinsonwalker/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.taj36.parkinsonwalker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DE3ED0B2B76CFDE000BBA43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"parkinsonwalker/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YRS8USNK7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = parkinsonwalker/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.taj36.parkinsonwalker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DE3ECF62B76CFDA000BBA43 /* Build configuration list for PBXProject "parkinsonwalker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DE3ED072B76CFDE000BBA43 /* Debug */,
+				0DE3ED082B76CFDE000BBA43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DE3ED092B76CFDE000BBA43 /* Build configuration list for PBXNativeTarget "parkinsonwalker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DE3ED0A2B76CFDE000BBA43 /* Debug */,
+				0DE3ED0B2B76CFDE000BBA43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DE3ECF32B76CFDA000BBA43 /* Project object */;
+}

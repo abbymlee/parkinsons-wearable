@@ -2,7 +2,7 @@
 
 This is the code repository for the IOS app to be paired with the gait-cueing device found here: https://github.com/mayarim/Park_PTD. The app contains three main modules: Bluetooth, Analytics, and Settings. The bluetooth module contains all code to connect the iPhone to the gait-cueing devices. The settings view allows the phone to send calibration settings to the device, as well as start a walking session. The analytics module contains all the code to populate the statistics generated for each walking session. Each specific Swift files' functionalities are detailed below.
 
-To upload this code to the iPhone, you will need to download the Swift code to XCode, which can be downloaded here: https://developer.apple.com/xcode/. Clone this repo using the clone function on Github (should be at the top of the repo), which will generate a zip file. Open the zip file in XCode. Then, thus tutorial: https://www.youtube.com/watch?v=TlgumE2xe_E&ab_channel=CrackingCodewithDave, can be followed, which explains all the licensing and configuring done needed to compile the code from XCode to your iphone.
+To upload this code to the iPhone, you will need to download the Swift code to XCode, which can be downloaded here: https://developer.apple.com/xcode/. Clone this repo using the clone function on Github (should be at the top of the repo), which will generate a zip file. Open the zip file in XCode. Then, this tutorial: https://www.youtube.com/watch?v=TlgumE2xe_E&ab_channel=CrackingCodewithDave, can be followed, which explains all the licensing and configuring done needed to compile the code from XCode to your iphone.
 
 ## AnalyticsModel.swift
 

@@ -24,14 +24,12 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     
     @Published var left_detector: Bool = false
 
-    
-    
-    
     @Published var calibratedLength: Float = 0
     @Published var toPlot = false
     
     @Published var timeArray: [Float] = [] // Arbitrary values
     @Published var stepLengthArray: [Float] = [] // Arbitrary values
+    @Published var intCount: Int = -1
     
     var readTimer: Timer?
     
@@ -129,19 +127,27 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
             print("Error updating value for characteristic \(characteristic.uuid): \(error.localizedDescription)")
             return
         }
+        if let value = characteristic.value {
+            let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
+            print("Received integer: \(stringValue)")
+            intCount = Int(stringValue)!
+        }
         
         if isRunning==true{
             
             if let value = characteristic.value {
                 let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
-                let components = stringValue.split(separator: ",")
-                if components.count == 2, let timeValue = Float(components[0]), let stepLengthValue = Float(components[1]) {
-                    if !timeArray.contains(timeValue) {
-                        timeArray.append(timeValue)
-                        stepLengthArray.append(stepLengthValue)
-                        print("Received time: \(timeValue), step length: \(stepLengthValue) from \(characteristic.uuid.uuidString)")
-                    }
-                }
+                print("Received time: \(stringValue)")
+                intCount = intCount + 1
+                
+//                let components = stringValue.split(separator: ",")
+//                if components.count == 2, let timeValue = Float(components[0]), let stepLengthValue = Float(components[1]) {
+//                    if !timeArray.contains(timeValue) {
+//                        timeArray.append(timeValue)
+//                        stepLengthArray.append(stepLengthValue)
+//                        print("Received time: \(timeValue), step length: \(stepLengthValue) from \(characteristic.uuid.uuidString)")
+//                    }
+//                }
             }
         }
     }

@@ -9,7 +9,8 @@ struct Session {
 }
 
 struct AnalyticsView: View {
-    @ObservedObject var bluetoothManager: BluetoothManager
+    @ObservedObject var bluetoothManager = BluetoothManager()
+    
     @State private var sessions: [Session] = [
            
             Session(date: "2024-04-09", startTime: "10:31 AM", totalSteps: 67, missedSteps: 4),
@@ -18,6 +19,7 @@ struct AnalyticsView: View {
 
     var body: some View {
         VStack {
+            Text("Int Count: \(bluetoothManager.intCount)")
             Text("Step Length vs. Time")
                 .font(.title)
                 .padding(.top, 10)

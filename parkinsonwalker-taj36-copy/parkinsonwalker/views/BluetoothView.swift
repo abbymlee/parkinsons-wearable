@@ -22,14 +22,14 @@ struct BluetoothView: View {
 
                     
                 }) {
-                    HStack {
-                        Text("Right Step Detector")
-                            .foregroundColor(.blue) // Always green
-                        Spacer()
-                        if isLeftStepDetectorConnected {
-                            
-                        }
-                    }
+//                    HStack {
+//                        Text("Detect Devices")
+//                            .foregroundColor(.blue) // Always green
+//                        Spacer()
+//                        if isLeftStepDetectorConnected {
+//                            
+//                        }
+//                    }
                 }
                 .buttonStyle(PlainButtonStyle()) // Makes the button look like plain text
                 

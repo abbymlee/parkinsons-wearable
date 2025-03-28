@@ -29,7 +29,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     
     @Published var timeArray: [Float] = [] // Arbitrary values
     @Published var stepLengthArray: [Float] = [] // Arbitrary values
-    @Published var intCount: Int = -1
+    @Published var intCount: Float = -1.0
     
     var readTimer: Timer?
     
@@ -130,7 +130,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
         if let value = characteristic.value {
             let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
             print("Received integer: \(stringValue)")
-            intCount = Int(stringValue)!
+            intCount = Float(stringValue)!
         }
         
         if isRunning==true{
@@ -138,7 +138,8 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
             if let value = characteristic.value {
                 let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
                 print("Received time: \(stringValue)")
-                intCount = intCount + 1
+//                intCount = intCount + 1
+                intCount = Float(stringValue)!
                 
 //                let components = stringValue.split(separator: ",")
 //                if components.count == 2, let timeValue = Float(components[0]), let stepLengthValue = Float(components[1]) {

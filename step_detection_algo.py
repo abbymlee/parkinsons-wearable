@@ -2,23 +2,40 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import random
 
-steps_csv = pd.read_csv("step_length_dual.csv")
-right = steps_csv["Right Foot (cm)"]
-left = steps_csv["Left Foot (cm)"]
+def read_sensor_data(filename):
+    
+    values = []
+    with open(filename, "r") as f:
+        for line in f:
+            words = line.strip().split(" ")
+            if words[0] != "Received":
+                continue
+            values.append(float(words[2]))
+
+    return values
+
 
 def noise():
     return random.uniform(0.85, 1.15) 
 
-right = [r * noise() for r in right]
-left = [l * noise() for l in left]
 
-plt.plot(right, label='right')
-plt.plot(left, label='left')
+steps_csv = pd.read_csv("step_length_dual.csv")
+right = steps_csv["Right Foot (cm)"]
+left = steps_csv["Left Foot (cm)"]
+
+# right = [r * noise() for r in right]
+# left = [l * noise() for l in left]
+front = read_sensor_data("realdata2.txt")
+
+plt.plot(front, label="front")
+# plt.plot(right, label='right')
+# plt.plot(left, label='left')
+plt.ylim(0, 300)
 plt.legend()
 plt.show()
 
 class StepLengthAlgorithm:
-    def __init__(self, min_threshold=15, max_threshold=60):
+    def __init__(self, min_threshold=12, max_threshold=70):
         self.window = [] 
         self.step_lengths = [] 
         self.min_threshold = min_threshold
@@ -53,7 +70,7 @@ class StepLengthAlgorithm:
 
 # Example usage
 detector = StepLengthAlgorithm()
-for value in right:
+for value in front:
     steps_lengths = detector.update(value)
 
 print("calculated step lengths:", steps_lengths)

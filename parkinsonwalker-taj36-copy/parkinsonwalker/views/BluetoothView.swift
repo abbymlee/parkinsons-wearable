@@ -5,51 +5,70 @@ import SwiftUI
 struct BluetoothView: View {
     @ObservedObject var bluetoothManager: BluetoothManager
     @State private var isLeftStepDetectorConnected = false
-    @State private var showConnectionStatus = false // State to control the sheet presentation
+    @State private var showConnectionStatus = false
+//    @State private var connectedPeripheral: CBPeripheral?
 
     var body: some View {
         NavigationStack {
             Text("Discovered Devices")
                 .font(.headline)
+           
             List {
-                // Hardcoded Left Step Detector
-                Button(action: {
-                    
-                  
-                    // Mocking a peripheral by using nil as a placeholder
-                    bluetoothManager.left_detector = true
-        
-
-                    
-                }) {
-//                    HStack {
-//                        Text("Detect Devices")
-//                            .foregroundColor(.blue) // Always green
-//                        Spacer()
-//                        if isLeftStepDetectorConnected {
-//                            
-//                        }
-//                    }
-                }
-                .buttonStyle(PlainButtonStyle()) // Makes the button look like plain text
-                
-                // List of other discovered peripherals
                 ForEach(bluetoothManager.discoveredPeripherals) { peripheralInfo in
                     Button(action: {
                         bluetoothManager.connect(peripheralInfo.peripheral)
                     }) {
                         HStack {
                             Text(peripheralInfo.localName)
-                                .foregroundColor(.blue) // Style as needed
+                                .foregroundColor(.blue)
                             Spacer()
                         }
                     }
-                    .buttonStyle(PlainButtonStyle()) // Makes the button look like plain text
+//                    .buttonStyle(PlainButtonStyle()) // Makes the button look like plain text
                 }
             }
-            .sheet(isPresented: $showConnectionStatus) { // Present the connection status view as a sheet
-                ConnectionStatusView(bluetoothManager: bluetoothManager)
+//            .sheet(isPresented: $showConnectionStatus) { // Present the connection status view as a sheet
+//                ConnectionStatusView(bluetoothManager: bluetoothManager)
+//            }
+            
+            
+            List {
+                ForEach(bluetoothManager.discoveredPeripherals.filter { bluetoothManager.connectedDevices.contains($0.peripheral) }) { peripheralInfo in
+                    HStack {
+                        Circle()
+                            .fill(Color.green)
+                            .frame(width: 10, height: 10)
+                        Button(peripheralInfo.localName) {
+                            bluetoothManager.discoveredPeripherals.removeAll { $0.peripheral == peripheralInfo.peripheral }
+                        }.foregroundColor(.green)
+                    }
+                }
             }
+            
+//            NavigationView {
+//                List {
+//                    ForEach(bluetoothManager.discoveredPeripherals, id: \.identifier) { peripheral in
+//                        Button(action: {
+//                            bluetoothManager.connect(to: peripheral)
+//                            connectedPeripheral = peripheral
+//                        }) {
+//                            HStack {
+//                                Text(peripheral.name ?? "Unknown Device")
+//                                Spacer()
+//                                if connectedPeripheral == peripheral && bluetoothManager.isConnected(to: peripheral) {
+//                                    Image(systemName: "checkmark.circle.fill")
+//                                        .foregroundColor(.green)
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//                .navigationTitle("Nearby Devices")
+//            }
+            
+            
+            
+            
         }
     }
 }

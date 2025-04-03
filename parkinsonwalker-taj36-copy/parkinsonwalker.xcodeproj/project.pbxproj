@@ -16,6 +16,7 @@
 		0DE3ED032B76CFDE000BBA43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE3ED022B76CFDE000BBA43 /* Assets.xcassets */; };
 		0DE3ED062B76CFDE000BBA43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE3ED052B76CFDE000BBA43 /* Preview Assets.xcassets */; };
 		0DE6BF322B7AC60A00B77F22 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */; };
+		4ACF9C002D9B927200D83557 /* DataCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF9BFF2D9B927200D83557 /* DataCollectionView.swift */; };
 		7F39E6492BC64C2D00062D76 /* AnalyticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E6482BC64C2D00062D76 /* AnalyticsModel.swift */; };
 		7F39E64B2BC64D9F00062D76 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */; };
 		7F39E64D2BC64F8A00062D76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39E64C2BC64F8A00062D76 /* SettingsView.swift */; };
@@ -34,6 +35,7 @@
 		0DE3ED022B76CFDE000BBA43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DE3ED052B76CFDE000BBA43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		4ACF9BFF2D9B927200D83557 /* DataCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionView.swift; sourceTree = "<group>"; };
 		7F39E6482BC64C2D00062D76 /* AnalyticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsModel.swift; sourceTree = "<group>"; };
 		7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		7F39E64C2BC64F8A00062D76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				0DE6BF312B7AC60A00B77F22 /* CalibrationView.swift */,
 				0DD80CFF2B7D80A7007DF330 /* BluetoothView.swift */,
+				4ACF9BFF2D9B927200D83557 /* DataCollectionView.swift */,
 				0D15964B2B86ECF000E0AA8F /* StepRecordingView.swift */,
 				7F39E64A2BC64D9F00062D76 /* AnalyticsView.swift */,
 				7F39E64C2BC64F8A00062D76 /* SettingsView.swift */,
@@ -197,6 +200,7 @@
 				0DD80CFE2B7D7A02007DF330 /* BluetoothManager.swift in Sources */,
 				0D15964C2B86ECF000E0AA8F /* StepRecordingView.swift in Sources */,
 				0DE3ECFF2B76CFDA000BBA43 /* parkinsonwalkerApp.swift in Sources */,
+				4ACF9C002D9B927200D83557 /* DataCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

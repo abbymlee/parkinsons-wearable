@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ConnectionStatusView(bluetoothManager: bluetoothManager) // Display the connection status
+//            ConnectionStatusView(bluetoothManager: bluetoothManager) // Display the connection status
         
             RecordingIndicatorView(isRecording: $isRecording)
                 .padding()
@@ -26,14 +26,17 @@ struct ContentView: View {
                 BluetoothView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
                     .tabItem { Label("Bluetooth", systemImage: "antenna.radiowaves.left.and.right") }
                     .tag(Tabs.bluetooth)
-               // CalibrationView()
-               //     .tabItem { Label("Calibration", systemImage: "smiley") }
-               //     .tag(Tabs.calibration)
+//                CalibrationView()
+//                    .tabItem { Label("Calibration", systemImage: "smiley") }
+//                    .tag(Tabs.calibration)
                 AnalyticsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
                     .tabItem { Label("Analytics", systemImage: "chart.bar") }
                     .tag(Tabs.analytics)
-                SettingsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
-                    .tabItem { Label("Settings", systemImage: "gearshape") }
+//                SettingsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
+//                    .tabItem { Label("Settings", systemImage: "gearshape") }
+//                    .tag(Tabs.settings)
+                DataCollectionView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
+                    .tabItem { Label("Collect", systemImage: "triangle.fill") }
                     .tag(Tabs.settings)
             }
         }

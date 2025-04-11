@@ -1,0 +1,107 @@
+does contain write characterstic
+sent message
+Connection lost with Arduino
+Discovered LE-Bose QC Lisa
+Arduino
+found characteristics (inside for loop in didDiscoverCharacteristicsFor): 0000AAAA-0000-1000-8000-00805F9B34FB
+found characteristics (inside for loop in didDiscoverCharacteristicsFor): 0000BBBB-0000-1000-8000-00805F9B34FB
+connected to right device, setting write characteristic
+Received integer: 214.19
+Received integer: 189.84
+Received integer: 187.05
+Received integer: 187.98
+Received integer: 187.03
+Received integer: 185.95
+Received integer: 230.26
+Received integer: 188.34
+Received integer: 188.09
+Received integer: 187.60
+Received integer: 66.64
+Received integer: 30.07
+Received integer: 230.76
+Received integer: 231.00
+Received integer: 14.69
+Received integer: 76.31
+Received integer: 75.78
+Received integer: 76.31
+Received integer: 76.31
+Received integer: 75.79
+Received integer: 76.31
+Received integer: 27.28
+Received integer: 59.26
+Received integer: 75.78
+Received integer: 76.31
+Received integer: 70.86
+Received integer: 18.84
+Received integer: 75.26
+Received integer: 72.98
+Received integer: 10.84
+Received integer: 75.79
+Received integer: 75.79
+Received integer: 76.31
+Received integer: 17.33
+Received integer: 45.12
+Received integer: 76.31
+Received integer: 12.07
+Received integer: 214.17
+Received integer: 213.60
+Received integer: 137.14
+Received integer: 16.81
+Received integer: 76.31
+Received integer: 37.45
+Received integer: 174.36
+Received integer: 151.31
+Received integer: 76.28
+Received integer: 75.76
+Received integer: 20.67
+Received integer: 146.78
+Received integer: 271.21
+Received integer: 13.47
+Received integer: 151.86
+Received integer: 153.97
+Received integer: 151.05
+Received integer: 9.78
+Received integer: 155.22
+Received integer: 152.81
+Received integer: 11.41
+Received integer: 75.62
+Received integer: 158.00
+Received integer: 75.78
+Received integer: 76.31
+Received integer: 23.12
+Received integer: 26.93
+Received integer: 31.84
+Received integer: 26.74
+Received integer: 75.78
+Received integer: 76.33
+Received integer: 76.31
+Received integer: 75.78
+Received integer: 2231.47
+Received integer: 2282.55
+Received integer: 2290.57
+Received integer: 143.59
+Received integer: 2248.26
+Received integer: 11.71
+Received integer: 2230.98
+Received integer: 2290.60
+Received integer: 2265.67
+Received integer: 2230.93
+Received integer: 196.81
+Received integer: 231.62
+Received integer: 2290.98
+Received integer: 35.19
+Received integer: 170.40
+Received integer: 76.31
+Received integer: 76.31
+Received integer: 11.19
+Received integer: 147.50
+Received integer: 23.66
+Received integer: 71.74
+Received integer: 60.33
+Received integer: 60.16
+Received integer: 76.31
+Received integer: 11.36
+Received integer: 76.31
+does contain write characterstic
+sent message
+Received integer: 95.48

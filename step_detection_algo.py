@@ -19,17 +19,17 @@ def noise():
     return random.uniform(0.85, 1.15) 
 
 
-steps_csv = pd.read_csv("step_length_dual.csv")
-right = steps_csv["Right Foot (cm)"]
-left = steps_csv["Left Foot (cm)"]
-
+# steps_csv = pd.read_csv("step_length_dual.csv")
+# right = steps_csv["Right Foot (cm)"]
+# left = steps_csv["Left Foot (cm)"]
 # right = [r * noise() for r in right]
 # left = [l * noise() for l in left]
+# plt.plot(right, label='right')
+# plt.plot(left, label='left')
+
 front = read_sensor_data("realdata2.txt")
 
 plt.plot(front, label="front")
-# plt.plot(right, label='right')
-# plt.plot(left, label='left')
 plt.ylim(0, 300)
 plt.legend()
 plt.show()

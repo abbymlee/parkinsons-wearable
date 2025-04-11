@@ -29,7 +29,9 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     
     @Published var timeArray: [Float] = []
     @Published var stepLengthArray: [Float] = []
-    @Published var intCount: Float = -1.0
+    @Published var front: Float = -1.0
+    @Published var back: Float = -1.0
+
     
     var readTimer: Timer?
     
@@ -133,8 +135,12 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
         }
         if let value = characteristic.value {
             let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
-            print("Received integer: \(stringValue)")
-            intCount = Float(stringValue)!
+            print("Received values from peripheral: \(stringValue)")
+            let receivedString = stringValue.split(separator: " ")
+            front = Float(receivedString[0])!
+            back = Float(receivedString[1])!
+//            front = Float(stringValue)!
+//            back = 0.0
         }
         
         if isRunning==true{
@@ -143,7 +149,11 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
                 let stringValue = String(decoding: value, as: UTF8.self) // Convert Data to String
                 print("Received time: \(stringValue)")
 //                intCount = intCount + 1
-                intCount = Float(stringValue)!
+                let receivedString = stringValue.split(separator: " ")
+                front = Float(receivedString[0])!
+                back = Float(receivedString[1])!
+//                front = Float(stringValue)!
+//                back = 0.0
                 
 //                let components = stringValue.split(separator: ",")
 //                if components.count == 2, let timeValue = Float(components[0]), let stepLengthValue = Float(components[1]) {

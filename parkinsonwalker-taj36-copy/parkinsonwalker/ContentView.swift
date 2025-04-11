@@ -30,11 +30,12 @@ struct ContentView: View {
 //                    .tabItem { Label("Calibration", systemImage: "smiley") }
 //                    .tag(Tabs.calibration)
                 AnalyticsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
+                // pass in analystics model instance to reference triggers (do not trigger views from outside of the view itself)
                     .tabItem { Label("Analytics", systemImage: "chart.bar") }
                     .tag(Tabs.analytics)
-//                SettingsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
-//                    .tabItem { Label("Settings", systemImage: "gearshape") }
-//                    .tag(Tabs.settings)
+                SettingsView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
+                    .tabItem { Label("Settings", systemImage: "gearshape") }
+                    .tag(Tabs.settings)
                 DataCollectionView(bluetoothManager: bluetoothManager) // Pass the BluetoothManager instance
                     .tabItem { Label("Collect", systemImage: "triangle.fill") }
                     .tag(Tabs.settings)

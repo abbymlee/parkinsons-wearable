@@ -19,7 +19,8 @@ struct AnalyticsView: View {
 
     var body: some View {
         VStack {
-            Text("Float Count: \(bluetoothManager.intCount)")
+            Text("Front sensor: \(bluetoothManager.front)")
+            Text("Back sensor: \(bluetoothManager.back)")
             Text("Step Length vs. Time")
                 .font(.title)
                 .padding(.top, 10)

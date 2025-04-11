@@ -22,7 +22,7 @@ struct DataCollectionView: View {
                     Text(peripheralInfo.localName)
                     HStack {
                         Button("Start Collection") {
-                            bluetoothManager.sendMessage("20")
+//                            bluetoothManager.sendMessage("20")
                             print("sent message")
                         }.buttonStyle(PlainButtonStyle())
                     }

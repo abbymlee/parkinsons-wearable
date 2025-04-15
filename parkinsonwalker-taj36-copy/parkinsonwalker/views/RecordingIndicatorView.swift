@@ -15,3 +15,10 @@ struct RecordingIndicatorView: View {
         }
     }
 }
+
+
+struct RecordingIndicatorView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecordingIndicatorView(isRecording: .constant(true))
+    }
+}

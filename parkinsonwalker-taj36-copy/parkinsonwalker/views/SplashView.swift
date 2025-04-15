@@ -16,10 +16,10 @@ struct SplashView: View {
             ContentView()
         } else {
             VStack {
-                Image(systemName: "bolt.fill") // Logo
+                Image(systemName: "shoe.fill") // Logo
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 120, height: 100)
                     .foregroundColor(.yellow)
                 Text("WalkIT")
                     .font(.largeTitle)

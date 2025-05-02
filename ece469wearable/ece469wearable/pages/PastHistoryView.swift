@@ -10,6 +10,10 @@ import SwiftUI
 struct PastHistoryView: View {
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var db: DatabaseManager
+    
+//    @Binding var selectedTab: Tab
+    
     var body: some View {
         ZStack {
             
@@ -28,7 +32,20 @@ struct PastHistoryView: View {
                 Text("Past Analytics")
                     .font(.largeTitle.bold())
                 
+                ForEach(db.records, id: \.self) { record in
+                    AnalyticsHistoryCard(
+                        startTime: formatTime(record.startTime),
+                        endTime: formatTime(record.endTime),
+                        date: formatDate(record.startTime),
+                        percent: String(record.percentage * 100)
+                    )
+                }
+                
+                AnalyticsHistoryCard(startTime: "9:00 AM", endTime: "9:05 AM", date: "4/9/2025", percent: "94")
+                AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "90")
+                
                 Spacer()
+                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
@@ -38,6 +55,18 @@ struct PastHistoryView: View {
     } // body
     
 } // PastHistoryView
+
+func formatTime(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    return formatter.string(from: date)
+}
+
+func formatDate(_ date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "m/d/yyyy"
+    return formatter.string(from: date)
+}
 
 
 
@@ -73,6 +102,7 @@ struct AnalyticsHistoryCard: View {
                         endPoint: .bottom
                     )
                 )
+//                .onTapGesture { selectedTab = .history }
 
             Spacer()
 
@@ -89,7 +119,7 @@ struct AnalyticsHistoryCard: View {
             }
         }
         .padding()
-        .background(Color.white.opacity(0.9))
+        .background(Color(.systemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 3)
     }
@@ -100,5 +130,6 @@ struct AnalyticsHistoryCard: View {
 
 
 #Preview {
-    PastHistoryView()
+    let mockDB = DatabaseManager()
+    PastHistoryView(db: mockDB)
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreBluetooth
 
 struct BluetoothView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -13,7 +14,8 @@ struct BluetoothView: View {
     @ObservedObject var db: DatabaseManager
     @ObservedObject var btManager: BluetoothManager
     
-    @State private var isSearching: Bool = true
+    @State private var isSearching: Bool = false
+    @State private var selectedDevice: CBPeripheral? = nil
     @State private var selectedDeviceMock: PeripheralMock? = nil
     
     
@@ -35,8 +37,8 @@ struct BluetoothView: View {
             
             VStack(spacing: 10) {
                 
-                VStack(spacing: 8) {
-                    Text("Searching for Devices...")
+                HStack(spacing: 8) {
+                    Text(isSearching ? "Searching for Devices..." : "Click Refresh to Search")
                         .font(.title3)
                         .foregroundColor(.primary)
                     if isSearching {
@@ -68,16 +70,16 @@ struct BluetoothView: View {
                 .font(.headline)
                 .padding(.bottom, 5)
             
-            ForEach(btManager.connectedPeripheralsMock, id: \.self) { device in
+            ForEach(btManager.connectedPeripherals, id: \.self) { device in
                 BluetoothDeviceCard(
                     name: device.name ?? "Unnamed Device",
-                    isSelected: selectedDeviceMock == device,
+                    isSelected: selectedDevice == device,
                     signalIcon: signalStrength(for: "Connected Device")
                 ) {
-                    if selectedDeviceMock == device {
-                        selectedDeviceMock = nil
+                    if selectedDevice == device {
+                        selectedDevice = nil
                     } else {
-                        selectedDeviceMock = device
+                        selectedDevice = device
                     }
                 }
             }
@@ -88,17 +90,17 @@ struct BluetoothView: View {
     }
     
     private var nearbyDevicesSection: some View {
-        ForEach(btManager.discoveredPeripheralsMock, id: \.self) { device in
-            if !btManager.connectedPeripheralsMock.contains(device) {
+        ForEach(btManager.discoveredPeripherals, id: \.self) { device in
+            if !btManager.connectedPeripherals.contains(device) {
                 BluetoothDeviceCard(
                     name: device.name ?? "Unnamed Device",
-                    isSelected: selectedDeviceMock == device,
+                    isSelected: selectedDevice == device,
                     signalIcon: signalStrength(for: device.name ?? "Unnamed Device")
                 ) {
-                    if selectedDeviceMock == device {
-                        selectedDeviceMock = nil
+                    if selectedDevice == device {
+                        selectedDevice = nil
                     } else {
-                        selectedDeviceMock = device
+                        selectedDevice = device
                     }
                 }
             }
@@ -109,7 +111,7 @@ struct BluetoothView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 
-                if btManager.connectedPeripheralsMock.count > 0 {
+                if btManager.connectedPeripherals.count > 0 {
                     connectedDevicesSection
                 }
                 
@@ -117,7 +119,7 @@ struct BluetoothView: View {
                     .font(.headline)
                     .padding(.bottom, 5)
                 
-                if btManager.discoveredPeripheralsMock.count > 0 {
+                if btManager.discoveredPeripherals.count > 0 {
                     nearbyDevicesSection
                 }
                 
@@ -136,8 +138,8 @@ struct BluetoothView: View {
     }
     
     private var buttonLabel: String {
-        guard let device = selectedDeviceMock else { return "Connect" }
-        return btManager.connectedPeripheralsMock.contains(device) ? "Disconnect" : "Connect"
+        guard let device = selectedDevice else { return "Connect" }
+        return btManager.connectedPeripherals.contains(device) ? "Disconnect" : "Connect"
     }
     
     private var buttonSection: some View {
@@ -153,8 +155,8 @@ struct BluetoothView: View {
             }
             
             Button(action: {
-                if let device = selectedDeviceMock {
-                    if btManager.connectedPeripheralsMock.contains(device) {
+                if let device = selectedDevice {
+                    if btManager.connectedPeripherals.contains(device) {
                         disconnectFromDevice(device)
                     } else {
                         connectToDevice(device)
@@ -164,11 +166,11 @@ struct BluetoothView: View {
                 Text(buttonLabel)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(selectedDeviceMock != nil ? Color.blue : Color.gray.opacity(0.3))
+                    .background(selectedDevice != nil ? Color.blue : Color.gray.opacity(0.3))
                     .foregroundColor(.white)
                     .cornerRadius(12)
             }
-            .disabled(selectedDeviceMock == nil)
+            .disabled(selectedDevice == nil)
         }
         .padding(.horizontal)
         .padding(.top, 10)
@@ -189,26 +191,32 @@ struct BluetoothView: View {
     func refreshDevices() {
         // First clear all bluetooth detected preferrals
         // Logic to scan for Bluetooth devices
-        print("Scanning for Bluetooth devices... ")
+        print("[view] Scanning for Bluetooth devices... ")
               
-        btManager.startScanningMock()
-        selectedDeviceMock = nil
+        isSearching = true
+        btManager.startScanning()
+        selectedDevice = nil
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            btManager.stopScanning()
+            isSearching = false
+        }
     }
     
-    func connectToDevice(_ device: PeripheralMock) {
+    func connectToDevice(_ device: CBPeripheral) {
         // Logic to initiate connection
-        print("Connecting to device... \(device.name ?? "Unnamed Device")")
+        print("[view] Connecting to device... \(device.name ?? "Unnamed Device")")
         
-        btManager.connectMock(to: device)
-        selectedDeviceMock = nil
+        btManager.connect(to: device)
+        selectedDevice = nil
     }
     
-    func disconnectFromDevice(_ device: PeripheralMock) {
+    func disconnectFromDevice(_ device: CBPeripheral) {
         // your logic here
-        print("Disconnecting to device... \(device.name ?? "Unnamed Device")")
+        print("[view] Disconnecting from device... \(device.name ?? "Unnamed Device")")
         
-        btManager.disconnectMock(from: device)
-        selectedDeviceMock = nil
+        btManager.disconnect(from: device)
+        selectedDevice = nil
     }
 }
 
@@ -262,10 +270,6 @@ private struct PreviewBluetoothView: View {
         mockDB.addReading(DistanceReading(timestamp: Date().addingTimeInterval(-120), distance: 42.3))
 
         let mockBT = BluetoothManager()
-        let fake1 = PeripheralMock(name: "Place_Holder_Ex1")
-        let fake2 = PeripheralMock(name: "Pl_Hdr_Ex2")
-
-        mockBT.discoveredPeripheralsMock = [fake1, fake2]
 
         return BluetoothView(db: mockDB, btManager: mockBT)
     }

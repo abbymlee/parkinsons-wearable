@@ -77,6 +77,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("did connect")
         peripheral.delegate = self
         peripheral.discoverServices(nil)
         print(peripheral.name ?? "Unnamed device")
@@ -91,8 +92,10 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("Discovering services")
         guard let services = peripheral.services else { return }
         for service in services {
+            print("Discovered service: \(service.uuid)")
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }

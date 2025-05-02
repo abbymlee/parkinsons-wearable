@@ -40,17 +40,17 @@ struct HomeView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
                         HStack(spacing: 20) {
-                            // StatCard(title: "Average Step Length", value: "\(averageStepLength(), specifier: "%.1f") cm")
-                            // StatCard(title: "Step Goal Hit Rate", value: "\(goalHitPercentage(), specifier: "%.1f")%")
-                            StatCard(title: "Avg Step Length", value: "40.8 cm")
+                            // StatCard(title: "Average Step Length", value: "\(db.averageStepLength, specifier: "%.1f") cm")
+                            // StatCard(title: "Step Goal Hit Rate", value: "\(db.goalHitPercentage, specifier: "%.1f")%")
+                            StatCard(title: "Avg Step Length", value: "21.8 cm")
                             StatCard(title: "Step Goal Hit Rate", value: "92.0%")
                         }
                         .padding(.horizontal)
                         HStack(spacing: 20) {
-                            // StatCard(title: "Avg Steps Per Session", value: "\(averageNumSteps(), specifier: "%.0f") cm")
-                            // StatCard(title: "Avg Session Duration", value: "\(averageDuration(), specifier: "%.1f")%")
-                            StatCard(title: "Avg Steps Per Session", value: "2418 steps")
-                            StatCard(title: "Avg Session Duration", value: "27.4 min")
+                            // StatCard(title: "Avg Steps Per Session", value: "\(db.averageNumSteps, specifier: "%.0f") cm")
+                            // StatCard(title: "Avg Session Duration", value: "\(db.averageDuration, specifier: "%.1f")%")
+                            StatCard(title: "Avg Steps Per Session", value: "46 steps")
+                            StatCard(title: "Avg Session Duration", value: "3.4 min")
                         }
                         .padding(.horizontal)
                     }
@@ -63,8 +63,8 @@ struct HomeView: View {
                             .font(.headline)
                         
                         VStack(spacing: 12) {
-                            if btManager.connectedPeripheralsMock.count > 0 {
-                                ForEach(btManager.connectedPeripheralsMock, id: \.self) { device in
+                            if btManager.connectedPeripherals.count > 0 {
+                                ForEach(btManager.connectedPeripherals, id: \.self) { device in
                                     DeviceCard(name: device.name ?? "Unnamed") {
                                         selectedTab = .bluetooth
                                     }
@@ -96,19 +96,17 @@ struct HomeView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Past Analytics")
                             .font(.headline)
+                        
+                        ForEach(db.records, id: \.self) { record in
+                            AnalyticsHistoryCard(
+                                startTime: formatTime(record.startTime),
+                                endTime: formatTime(record.endTime),
+                                date: formatDate(record.startTime),
+                                percent: String(record.percentage)
+                            )
+                        }
+                        
                         AnalyticsHistoryCard(startTime: "9:00 AM", endTime: "9:05 AM", date: "4/9/2025", percent: "94.7")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
-                        AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
                         AnalyticsHistoryCard(startTime: "7:30 AM", endTime: "7:35 AM", date: "4/7/2025", percent: "89.3")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
